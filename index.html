@@ -6,118 +6,184 @@
   <title>Scrooch Project</title>
   <link rel="icon" href="https://avatars.githubusercontent.com/u/221273265?s=200&v=4">
   <style>
+    :root {
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --accent: #0071e3; /* Apple Blue */
+      --success: #34c759; /* Apple Green */
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #f5f5f7;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      line-height: 1.5;
+      overflow-x: hidden;
     }
+
+    /* Animated Liquid Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at 20% 30%, #1a1a2e 0%, transparent 40%),
+                  radial-gradient(circle at 80% 70%, #072e1c 0%, transparent 40%),
+                  radial-gradient(circle at 50% 50%, #121212 0%, #000 100%);
+      z-index: -1;
+      filter: blur(80px);
+    }
+
     header {
-      background-color: #1e1e1e;
-      padding: 40px 20px;
+      padding: 80px 20px;
       text-align: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
     }
+
     header img {
-      width: 90px;
-      height: 90px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      width: 100px;
+      height: 100px;
+      border-radius: 22px; /* Apple's squircle-ish radius */
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
     }
+
     h1 {
-      font-size: 2.5rem;
-      margin: 15px 0 5px;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+      background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     p {
-      font-size: 1.1rem;
-      color: #ccc;
+      font-size: 1.25rem;
+      color: #86868b;
       max-width: 600px;
+      margin: 15px auto;
+    }
+
+    .container {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 20px;
     }
+
+    /* Glass Card Style */
     .section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
+
+    .section:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+
+    /* Apple-style Buttons */
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      font-size: 1rem;
+      padding: 12px 24px;
+      font-size: 17px;
+      font-weight: 500;
       color: #fff;
-      background-color: #4a90e2;
+      background-color: var(--accent);
       border: none;
-      border-radius: 5px;
+      border-radius: 980px; /* Fully rounded */
       text-decoration: none;
-      margin-top: 25px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .btn:hover {
-      background-color: #357ABD;
-      transform: translateY(-2px);
+      opacity: 0.9;
+      transform: scale(1.02);
     }
+
+    .btn-secondary {
+      background-color: var(--success);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      padding: 10px;
+      color: #a1a1a6;
+    }
+
     footer {
-      background-color: #1e1e1e;
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #333;
+      font-size: 0.8rem;
+      color: #424245;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="https://avatars.githubusercontent.com/u/221273265?s=200&v=4" alt="Scrooch Logo">
-    <h1>Welcome to the Scrooch Project</h1>
-    <p>Create your own Scratch mods easily with Scrooch 2 and Scrooch 3 — the open framework for Scratch modding.</p>
-    <a href="https://scrooch-project.github.io/docs" class="btn">📄 View Documentation</a>
+    <h1>Scrooch Project</h1>
+    <p>The open framework for professional Scratch modding.</p>
+    <a href="https://scrooch-project.github.io/docs" class="btn btn-outline">View Documentation</a>
   </header>
 
-  <section class="section">
-    <h2>🚀 What is Scrooch?</h2>
-    <p>
-      Scrooch is a modding framework built on top of popular Scratch mods.
-      With Scrooch, you can quickly create your own customized Scratch mod
-      without starting from scratch (pun intended 😉).
-    </p>
-  </section>
+  <div class="container">
+    <section class="section">
+      <h2>🚀 What is Scrooch?</h2>
+      <p>
+        Scrooch is a high-performance modding framework. 
+        Build customized environments without the overhead of starting from zero.
+      </p>
+    </section>
 
-  <section class="section">
-    <h2>🛠 Features (Scrooch 3)</h2>
-    <p>
-      - Easy setup using GitHub templates<br>
-      - Customizable UI and branding<br>
-      - Works with extensions and custom blocks<br>
-      - Based on popular Scratch Mods for stability
-    </p>
-  </section>
+    <section class="section">
+      <h2>🛠 Features (Scrooch 3)</h2>
+      <div class="features-grid">
+        <div class="feature-item"><b>✦ GitHub Native</b><br>Easy setup using templates.</div>
+        <div class="feature-item"><b>✦ Custom Branding</b><br>Full control over UI and style.</div>
+        <div class="feature-item"><b>✦ Mod Support</b><br>Works with custom blocks.</div>
+        <div class="feature-item"><b>✦ Stability</b><br>Built on proven mod bases.</div>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>📦 Get Started</h2>
-    <p>Choose your modding base:</p>
-    <a href="https://scrooch-project.github.io/docs/#/setup/v2" class="btn">📁Make a Scrooch 2 Mod</a>
-<a href="https://github.com/scrooch-project/Scrooch3#readme" 
-   class="btn" 
-   style="background-color:#50c878;margin-left:10px;" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   🐱 Make a Scrooch 3 Mod
-</a>
-  </section>
-
-  <section class="section">
-    <h2>💡 Why Choose Scrooch?</h2>
-    <p>
-      Scrooch saves you hours of setup time so that you can focus on personalising
-      and designing your mod. Whether you’re creating a personal mod, a mod for your friend,
-      or the next big Scratch-based platform, Scrooch gives you the tools you need.
-    </p>
-  </section>
+    <section class="section" style="text-align: center;">
+      <h2>📦 Get Started</h2>
+      <p>Choose your base and start creating.</p>
+      <a href="https://scrooch-project.github.io/docs/#/setup/v2" class="btn">Make a Scrooch 2 Mod</a>
+      <a href="https://github.com/scrooch-project/Scrooch3#readme" class="btn btn-secondary">Make a Scrooch 3 Mod</a>
+    </section>
+  </div>
 
   <footer>
     Scrooch Project — Not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.
   </footer>
+
 </body>
 </html>
