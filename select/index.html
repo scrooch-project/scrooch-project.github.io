@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scrooch Setup</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/221273265?s=200&v=4">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+    }
+
+    header img {
+      width: 100px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      margin-top: 10px;
+      font-size: 2.5em;
+    }
+
+    p {
+      color: #94a3b8;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      width: 260px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #334155;
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    /* Make GitHub icon white */
+    .github-icon {
+      filter: brightness(0) invert(1);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://avatars.githubusercontent.com/u/221273265?s=200&v=4" alt="Scrooch Logo">
+  <h1>Scrooch</h1>
+  <p>Choose where you want to create your Scratch Mod</p>
+</header>
+
+<div class="options">
+
+  <!-- GitHub Option -->
+  <div class="card" onclick="goGitHub()">
+    <img class="github-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+    <h2>GitHub</h2>
+    <p>Work directly on GitHub</p>
+  </div>
+
+  <!-- Neocities Option -->
+  <div class="card" onclick="goNeocities()">
+    <img src="https://neocities.org/img/favicon.png" alt="Neocities">
+    <h2>Neocities</h2>
+    <p>Download editor + host on Neocities</p>
+  </div>
+
+</div>
+
+<script>
+  function goGitHub() {
+    window.location.href = "https://github.com/scrooch-project/scrooch3/wiki";
+  }
+
+  function goNeocities() {
+    const link = document.createElement("a");
+    link.href = "https://github.com/scrooch-project/scrooch3/archive/refs/heads/editor.zip";
+    link.download = "scrooch3-editor.zip";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      window.location.href = "https://github.com/scrooch-project/Scrooch3/wiki/Welcome-to-Scrooch-on-Neocities!";
+    }, 1200);
+  }
+</script>
+
+</body>
+</html>
