@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scrooch - Credits</title>
+
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: white;
+      color: black;
+    }
+
+    body[splash-theme="dark"] {
+      background: #111;
+      color: #eee;
+    }
+
+    a {
+      text-decoration: none;
+      color: #FF9900;
+    }
+
+    body[splash-theme="dark"] a {
+      color: #FFB84D;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header.top-header {
+      text-align: center;
+      padding: 30px 0;
+      color: white;
+      background-color: #FF9900;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .users {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      padding: 4px;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      color: inherit;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .user:hover {
+      background: #eee;
+    }
+
+    body[splash-theme="dark"] .user:hover {
+      background: #222;
+    }
+
+    .user img {
+      width: 60px;
+      height: 60px;
+      margin-right: 12px;
+      border-radius: 50%;
+    }
+
+    .based-on {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+    }
+
+    .based-on-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .based-on-item img {
+      height: 40px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    .arrow {
+      font-size: 1.5rem;
+      margin: 0 5px;
+      flex-shrink: 0;
+    }
+
+    .lovable {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .lovable img {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<script>
+  (function() {
+    try { var localTheme = localStorage.getItem('tw:theme'); } catch (e) {}
+    if (localTheme ? localTheme === 'dark' :
+      window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.setAttribute('splash-theme', 'dark');
+    }
+  })();
+</script>
+
+<main>
+
+  <header class="top-header">Scrooch Credits</header>
+
+  <section>
+    <h2>Developer</h2>
+    <div class="users">
+      <a href="https://me.cattymod.app" target="_blank" class="user">
+        <img src="https://trampoline.turbowarp.org/avatars/111812798" alt="Noahscratch493">
+        <div>Noahscratch493</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lovable</h2>
+    <div class="lovable">
+      <img src="https://lovable.dev/img/logo/lovable-logo-icon.png" alt="Lovable">
+      <div>
+        <a href="https://lovable.dev" target="_blank">Lovable</a>
+        was used to generate the homepage and explore page.<br>
+        The explore page also uses Lovable Cloud to host shared projects.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Based On</h2>
+
+    <div class="based-on">
+
+      <div class="based-on-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Scratch_S.svg/500px-Scratch_S.svg.png">
+        <div>Scratch</div>
+      </div>
+
+      <span class="arrow">→</span>
+
+      <div class="based-on-item">
+        <img src="https://extensions.turbowarp.org/turbowarp.svg">
+        <div>TurboWarp</div>
+      </div>
+
+      <span class="arrow">→</span>
+
+      <div class="based-on-item">
+        <img src="https://penguinmod.com/favicon.ico">
+        <div>PenguinMod</div>
+      </div>
+
+      <span class="arrow">→</span>
+
+      <div class="based-on-item">
+        <img src="https://avatars.githubusercontent.com/u/221273265?s=200&v=4">
+        <div>Scrooch Framework</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>GitHub Pages</h2>
+    <p>Scrooch is hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+  </section>
+
+  <section>
+    <h2>Scratch</h2>
+    <p>
+      Scrooch is based on the work of the
+      <a href="https://scratch.mit.edu/credits" target="_blank">Scratch contributors</a>,
+      but is not endorsed by Scratch.
+    </p>
+    <p><a href="https://scratch.mit.edu/donate" target="_blank">Donate to support Scratch</a>.</p>
+  </section>
+
+  <section>
+    <h2>Inspiration</h2>
+    <p>PenguinMod’s GitHub structure helped inspire Scrooch.</p>
+  </section>
+
+  <section>
+    <h2>And finally... You!</h2>
+    <p>For supporting Scrooch just by using it ❤️</p>
+  </section>
+
+
+</main>
+
+</body>
+</html>
