@@ -49,6 +49,10 @@
       width: 260px;
       cursor: pointer;
       transition: transform 0.2s, background 0.2s;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .card:hover {
@@ -58,15 +62,29 @@
 
     .card img {
       width: 60px;
-      margin-bottom: 15px;
     }
 
-    /* Make GitHub icon white */
+    .neocities-icon {
+      width: 100px;
+    }
+
     .github-icon {
       filter: brightness(0) invert(1);
     }
+
+    /* spacing control */
+    .card h2 {
+      margin: 10px 0 4px 0; /* small space above text */
+    }
+
+    .card p {
+      margin: 6px 0 0 0; /* slightly lower + no bottom stretching */
+      color: #94a3b8;
+    }
+
   </style>
 </head>
+
 <body>
 
 <header>
@@ -86,7 +104,7 @@
 
   <!-- Neocities Option -->
   <div class="card" onclick="goNeocities()">
-    <img src="https://neocities.org/img/favicon.png" alt="Neocities">
+    <img class="neocities-icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/neocities.png" alt="Neocities">
     <h2>Neocities</h2>
     <p>Download editor + host on Neocities</p>
   </div>
