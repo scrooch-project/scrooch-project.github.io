@@ -72,7 +72,6 @@
       filter: brightness(0) invert(1);
     }
 
-    /* NEW: make hosting icon white */
     .hosting-icon {
       filter: brightness(0) invert(1);
     }
@@ -112,7 +111,7 @@
     <p>Download editor + host on Neocities</p>
   </div>
 
-  <!-- Other Static Hosting Providers -->
+  <!-- Other Hosting Option -->
   <div class="card" onclick="goOtherHosting()">
     <img class="hosting-icon" src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Hosting">
     <h2>Other Hosting</h2>
@@ -126,7 +125,8 @@
     window.location.href = "https://github.com/scrooch-project/scrooch3/wiki";
   }
 
-  function goNeocities() {
+  // shared download function
+  function downloadAndRedirect() {
     const link = document.createElement("a");
     link.href = "https://github.com/scrooch-project/scrooch3/archive/refs/heads/editor.zip";
     link.download = "scrooch3-editor.zip";
@@ -139,8 +139,12 @@
     }, 1200);
   }
 
+  function goNeocities() {
+    downloadAndRedirect();
+  }
+
   function goOtherHosting() {
-    window.location.href = "https://github.com/scrooch-project/scrooch3/wiki/Welcome-to-Scrooch-3!";
+    downloadAndRedirect();
   }
 </script>
 
