@@ -72,16 +72,19 @@
       filter: brightness(0) invert(1);
     }
 
-    /* spacing control */
+    /* NEW: make hosting icon white */
+    .hosting-icon {
+      filter: brightness(0) invert(1);
+    }
+
     .card h2 {
-      margin: 10px 0 4px 0; /* small space above text */
+      margin: 10px 0 4px 0;
     }
 
     .card p {
-      margin: 6px 0 0 0; /* slightly lower + no bottom stretching */
+      margin: 6px 0 0 0;
       color: #94a3b8;
     }
-
   </style>
 </head>
 
@@ -109,6 +112,13 @@
     <p>Download editor + host on Neocities</p>
   </div>
 
+  <!-- Other Static Hosting Providers -->
+  <div class="card" onclick="goOtherHosting()">
+    <img class="hosting-icon" src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Hosting">
+    <h2>Other Hosting</h2>
+    <p>Use other static hosting providers</p>
+  </div>
+
 </div>
 
 <script>
@@ -125,8 +135,12 @@
     document.body.removeChild(link);
 
     setTimeout(() => {
-      window.location.href = "https://github.com/scrooch-project/Scrooch3/wiki/Welcome-to-Scrooch-on-Neocities!";
+      window.location.href = "https://github.com/scrooch-project/scrooch3/wiki/Welcome-to-Scrooch-3!";
     }, 1200);
+  }
+
+  function goOtherHosting() {
+    window.location.href = "https://github.com/scrooch-project/scrooch3/wiki/Welcome-to-Scrooch-3!";
   }
 </script>
 
